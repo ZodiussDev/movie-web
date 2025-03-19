@@ -46,7 +46,7 @@ ENV VITE_ALLOW_AUTOPLAY=${ALLOW_AUTOPLAY}
 
 COPY . ./
 RUN pnpm exec prettier --write . && pnpm exec eslint --fix .
-RUN pnpm run build 
+RUN pnpm run build --debug
 
 # production environment
 FROM nginx:stable-alpine
