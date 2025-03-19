@@ -6,7 +6,7 @@ RUN corepack enable
 
 COPY package.json ./
 COPY pnpm-lock.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --no-frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --force
 
 ARG PWA_ENABLED="false"
 ARG GA_ID
