@@ -45,7 +45,8 @@ ENV VITE_TURNSTILE_KEY=${TURNSTILE_KEY}
 ENV VITE_ALLOW_AUTOPLAY=${ALLOW_AUTOPLAY}
 
 COPY . ./
-RUN pnpm run build
+RUN pnpm exec prettier --write . && pnpm exec eslint --fix .
+RUN pnpm run build 
 
 # production environment
 FROM nginx:stable-alpine
