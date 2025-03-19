@@ -4,7 +4,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-RUN apt-get update && apt-get install -y git
+RUN apk add --no-cache git
 
 COPY package.json ./
 COPY pnpm-lock.yaml ./
